@@ -1,5 +1,8 @@
 package com.example.employee.restfulapi.entity;
 
+import com.baomidou.mybatisplus.annotation.IdType;
+import com.baomidou.mybatisplus.annotation.TableId;
+
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import java.util.HashSet;
@@ -9,6 +12,7 @@ import java.util.Set;
 public class Company {
     @Id
     @GeneratedValue
+    @TableId(value = "id", type = IdType.AUTO)
     private Long id;
     private String companyName;
     private Integer employeesNumber;

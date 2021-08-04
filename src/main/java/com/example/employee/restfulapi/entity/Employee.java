@@ -1,14 +1,19 @@
 package com.example.employee.restfulapi.entity;
 
 
+import com.baomidou.mybatisplus.annotation.IdType;
+import com.baomidou.mybatisplus.annotation.TableId;
+
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
+import java.io.Serializable;
 
 @Entity
 public class Employee {
     @Id
     @GeneratedValue
-    private Long id;
+    @TableId(value = "id", type = IdType.AUTO)
+    private Integer id;
     private String name;
     private Integer age;
     private String gender;
@@ -42,7 +47,7 @@ public class Employee {
         this.salary = salary;
     }
 
-    public long getId() {
+    public Integer getId() {
         return id;
     }
 
@@ -57,6 +62,9 @@ public class Employee {
 
     public Integer getAge() {
         return age;
+    }
+    public Integer setId(Integer id) {
+        return this.id=id;
     }
 
 
